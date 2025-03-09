@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدايا رمضان</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- النافذة المنبثقة -->
+    <div class="modal" id="startModal">
+        <div class="modal-content">
+            <h2>مرحبًا بكم في مسابقة هدايا رمضان من اسيا سيل!</h2>
+            <p>اضغط على الزر لبدء المسابقة.</p>
+            <button class="btn" onclick="startCompetition()">ابدأ المسابقة</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>مرحبًا بكم في موقع هدايا رمضان من اسيا سيل!</h1>
+        <p>نتمنى لكم رمضانًا مباركًا مليئًا بالخيرات.</p>
+
+        <div class="boxes" id="boxes">
+            <script>
+                for (let i = 1; i <= 9; i++) {
+                    document.write(`<div class='box' onclick='attempt(${i})'></div>`);
+                }
+            </script>
+        </div>
+
+        <p id="result"></p>
+        <button id="rewardBtn" class="btn" style="display: none;" onclick="claimReward()">استلام الهدية</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
