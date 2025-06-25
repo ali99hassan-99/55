@@ -170,23 +170,37 @@
       font-size: 13px;
       color: #999;
     }
+
+    @media (max-width: 600px) {
+      .primary-btn,
+      .nav-button,
+      .call-button {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>💎 مركز أحلى الأسعار - الجبايش 💎</h1>
+  <h1>مركز أحلى الأسعار - الجبايش</h1>
+
   <div class="calculator">
     <label>📩 الصق الرسالة هنا أو اكتب عدد الكوينات يدويًا</label>
     <div class="textarea-container">
       <textarea id="messageInput" placeholder="الصق الرسالة من التطبيق هنا..."></textarea>
       <button class="paste-btn" onclick="pasteText()">📋</button>
     </div>
+
     <label>✍️ أو اكتب عدد الكوينات يدويًا:</label>
     <input type="number" id="manualCoins" placeholder="مثال: 5000" min="0" />
+
     <button class="primary-btn" onclick="analyze()">🔍 تحليل وحساب</button>
     <button class="nav-button" onclick="goToOffers()">📦 اذهب إلى العروض</button>
     <button class="call-button" onclick="confirmCall()">📞 اضغط لمعرفة الرصيد</button>
+
     <div class="result" id="resultArea"></div>
   </div>
+
   <footer>
     جميع الحقوق محفوظة © مركز أحلى الأسعار 2025
   </footer>
@@ -236,7 +250,7 @@
 
         output += `
           ✅ عدد الكوينات: <strong>${coins}</strong><br>
-          ⏱️  وقت الاتصال المتبقي: <strong>${minutes}</strong> دقيقة و <strong>${seconds}</strong> ثانية<br>
+          ⏱️ وقت الاتصال المتبقي: <strong>${minutes}</strong> دقيقة و <strong>${seconds}</strong> ثانية<br>
           🌐 يمكنك استخدامه كإنترنت: <strong>${cakes}</strong> كيكا و <strong>${remainingMB}</strong> ميغابايت<br><br>
         `;
       } else {
