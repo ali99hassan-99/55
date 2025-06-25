@@ -1,262 +1,302 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <title>مركز أحلى الأسعار - الجبايش</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            padding: 40px;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-        }
-        .calculator {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            max-width: 700px;
-            margin: auto;
-        }
-        label {
-            font-size: 16px;
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-        }
-        .textarea-container {
-            position: relative;
-            display: inline-block;
-            width: 90%;
-        }
-        textarea {
-            width: 100%;
-            font-size: 16px;
-            padding: 10px 50px 10px 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            resize: none;
-            text-align: right;
-            height: 150px;
-        }
-        .paste-btn {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 6px 12px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        input[type="number"] {
-            width: 90%;
-            font-size: 16px;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            text-align: right;
-        }
-        button {
-            padding: 10px 25px;
-            background-color: #007bff;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            margin: 10px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .nav-button {
-            background-color: #28a745;
-        }
-        .nav-button:hover {
-            background-color: #1e7e34;
-        }
-        .call-button {
-            background-color: #ff5722;
-        }
-        .call-button:hover {
-            background-color: #e64a19;
-        }
-        .result {
-            margin-top: 25px;
-            font-size: 18px;
-            color: #444;
-            line-height: 1.8;
-        }
-        .apps {
-            margin-top: 10px;
-        }
-        .apps span {
-            display: inline-flex;
-            align-items: center;
-            margin: 5px 12px;
-            font-size: 16px;
-            color: #333;
-        }
-        .apps img {
-            vertical-align: middle;
-            width: 30px;
-            height: 30px;
-            margin-left: 8px;
-        }
-        footer {
-            margin-top: 40px;
-            color: #777;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مركز أحلى الأسعار - الجبايش</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(to right, #eaf4ff, #f9f9f9);
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #1a237e;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .calculator {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      max-width: 95%;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      text-align: right;
+      margin-bottom: 6px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .textarea-container {
+      position: relative;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      font-size: 15px;
+      padding: 10px 40px 10px 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: none;
+      background-color: #fefefe;
+    }
+
+    .paste-btn {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background: #00acc1;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      font-size: 15px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fefefe;
+      text-align: right;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 6px;
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button:nth-of-type(1) {
+      background-color: #3949ab;
+    }
+
+    .nav-button {
+      background-color: #4caf50;
+    }
+
+    .call-button {
+      background-color: #fb8c00;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+      text-align: right;
+      line-height: 1.6;
+      background: #f7f9fc;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .apps {
+      margin-top: 10px;
+    }
+
+    .apps span {
+      display: inline-flex;
+      align-items: center;
+      margin: 4px 8px;
+      font-size: 15px;
+    }
+
+    .apps img {
+      width: 24px;
+      height: 24px;
+      margin-left: 6px;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      button {
+        width: 100%;
+        margin: 8px 0;
+      }
+
+      .result {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>💎 مركز أحلى الأسعار - الجبايش 💎</h1>
+  <h1>💎 مركز أحلى الأسعار - الجبايش 💎</h1>
 
-    <div class="calculator">
-        <label>📩 الصق الرسالة هنا أو اكتب عدد الكوينات يدويًا</label>
-        <div class="textarea-container">
-            <textarea id="messageInput" placeholder="الصق الرسالة من التطبيق هنا..."></textarea>
-            <button class="paste-btn" onclick="pasteText()">📋 لصق</button>
-        </div>
-
-        <label>✍️ أو اكتب عدد الكوينات يدويًا:</label>
-        <input type="number" id="manualCoins" placeholder="مثال: 5000" min="0" />
-
-        <button onclick="analyze()">تحليل وحساب</button>
-        <button class="nav-button" onclick="goToOffers()">اذهب إلى العروض</button>
-        <button class="call-button" onclick="confirmCall()">📞 الاتصال برمز الخدمة *133#</button>
-
-        <div class="result" id="resultArea"></div>
+  <div class="calculator">
+    <label>📩 الصق الرسالة هنا أو اكتب عدد الكوينات يدويًا</label>
+    <div class="textarea-container">
+      <textarea id="messageInput" placeholder="الصق الرسالة من التطبيق هنا..."></textarea>
+      <button class="paste-btn" onclick="pasteText()">📋 لصق</button>
     </div>
 
-    <footer>
-        جميع الحقوق محفوظة © مركز أحلى الأسعار 2025
-    </footer>
+    <label>✍️ أو اكتب عدد الكوينات يدويًا:</label>
+    <input type="number" id="manualCoins" placeholder="مثال: 5000" min="0" />
 
-    <script>
-        async function pasteText() {
-            try {
-                const text = await navigator.clipboard.readText();
-                document.getElementById("messageInput").value = text;
-            } catch (err) {
-                alert("⚠️ لا يمكن الوصول إلى الحافظة. الرجاء لصق الرسالة يدويًا.");
-            }
+    <button onclick="analyze()">تحليل وحساب</button>
+    <button class="nav-button" onclick="goToOffers()">اذهب إلى العروض</button>
+    <button class="call-button" onclick="confirmCall()">📞 اضغط لمعرفة الرصيد</button>
+
+    <div class="result" id="resultArea"></div>
+  </div>
+
+  <footer>
+    جميع الحقوق محفوظة © مركز أحلى الأسعار 2025
+  </footer>
+
+  <script>
+    async function pasteText() {
+      try {
+        const text = await navigator.clipboard.readText();
+        document.getElementById("messageInput").value = text;
+      } catch (err) {
+        alert("⚠️ لا يمكن الوصول إلى الحافظة. الرجاء لصق الرسالة يدويًا.");
+      }
+    }
+
+    function analyze() {
+      const message = document.getElementById("messageInput").value.trim();
+      const manualCoins = parseInt(document.getElementById("manualCoins").value);
+      const resultArea = document.getElementById("resultArea");
+
+      let coins = null;
+      let showDetails = false;
+
+      if (!isNaN(manualCoins) && manualCoins > 0) {
+        coins = manualCoins;
+        showDetails = false;
+      } else if (message.length > 10) {
+        const coinMatch = message.match(/(\d+(?:\.\d+)?)\s*كوين/);
+        if (coinMatch) {
+          coins = parseInt(coinMatch[1]);
+        }
+        showDetails = true;
+      } else {
+        resultArea.innerHTML = "⚠️ يرجى لصق رسالة صحيحة أو إدخال عدد الكوينات.";
+        return;
+      }
+
+      let output = "";
+
+      if (coins) {
+        const totalSeconds = Math.floor(coins / 2);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+
+        const totalMB = Math.floor(coins / 4);
+        const cakes = Math.floor(totalMB / 1000);
+        const remainingMB = totalMB % 1000;
+
+        output += `
+          ✅ عدد الكوينات: <strong>${coins}</strong><br>
+          ⏱️  وقت الاتصال المتبقي: <strong>${minutes}</strong> دقيقة و <strong>${seconds}</strong> ثانية<br>
+          🌐 يمكنك استخدامة كأنترنت: <strong>${cakes}</strong> كيكا و <strong>${remainingMB}</strong> ميغابايت<br><br>
+        `;
+      } else {
+        output += "⚠️ لم يتم العثور على عدد الكوينات.<br><br>";
+      }
+
+      if (showDetails) {
+        const dateMatches = message.match(/\d{2}-\d{2}-\d{4}/g);
+        let expiryDate = null;
+        if (dateMatches && dateMatches.length > 0) {
+          expiryDate = dateMatches[dateMatches.length - 1];
         }
 
-        function analyze() {
-            const message = document.getElementById("messageInput").value.trim();
-            const manualCoins = parseInt(document.getElementById("manualCoins").value);
-            const resultArea = document.getElementById("resultArea");
-
-            let coins = null;
-            let showDetails = false;
-
-            if (!isNaN(manualCoins) && manualCoins > 0) {
-                coins = manualCoins;
-                showDetails = false; // يدوي فقط، لا نظهر التفاصيل الأخرى
-            } else if (message.length > 10) {
-                const coinMatch = message.match(/(\d+(?:\.\d+)?)\s*كوين/);
-                if (coinMatch) {
-                    coins = parseInt(coinMatch[1]);
-                }
-                showDetails = true; // رسالة موجودة، نظهر التفاصيل
-            } else {
-                resultArea.innerHTML = "⚠️ يرجى لصق رسالة صحيحة أو إدخال عدد الكوينات.";
-                return;
-            }
-
-            let output = "";
-
-            if (coins) {
-                const totalSeconds = Math.floor(coins / 2);
-                const minutes = Math.floor(totalSeconds / 60);
-                const seconds = totalSeconds % 60;
-
-                const totalMB = Math.floor(coins / 4);
-                const cakes = Math.floor(totalMB / 1000);
-                const remainingMB = totalMB % 1000;
-
-                output += `
-                    ✅ عدد الكوينات: <strong>${coins}</strong><br>
-                    ⏱️ وقت الاتصال: <strong>${minutes}</strong> دقيقة و <strong>${seconds}</strong> ثانية<br>
-                    🌐 الإنترنت: <strong>${cakes}</strong> كيكا و <strong>${remainingMB}</strong> ميغابايت<br><br>
-                `;
-            } else {
-                output += "⚠️ لم يتم العثور على عدد الكوينات.<br><br>";
-            }
-
-            if (showDetails) {
-                const dateMatches = message.match(/\d{2}-\d{2}-\d{4}/g);
-                let expiryDate = null;
-                if (dateMatches && dateMatches.length > 0) {
-                    expiryDate = dateMatches[dateMatches.length - 1];
-                }
-
-                let daysRemaining = '';
-                if (expiryDate) {
-                    const today = new Date();
-                    const [day, month, year] = expiryDate.split("-").map(x => parseInt(x));
-                    const expiry = new Date(year, month - 1, day);
-                    const diffTime = expiry - today;
-                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                    daysRemaining = diffDays >= 0 ? `${diffDays} يوم متبقي` : "❌ منتهي";
-                }
-
-                const appMatch = message.match(/(?:الاستخدام|الإستخدام)\s+المجاني\s+لـ(.*?)صالحة\s+لغاية/i);
-                let appIcons = "";
-                if (appMatch) {
-                    const appList = appMatch[1].split("،").map(app => app.trim().toLowerCase());
-
-                    const iconMap = {
-                        "واتساب": "https://img.icons8.com/color/48/000000/whatsapp.png",
-                        "تيك توك": "https://img.icons8.com/color/48/000000/tiktok--v1.png",
-                        "فيسبوك": "https://img.icons8.com/color/48/000000/facebook-new.png",
-                        "إنستغرام": "https://img.icons8.com/color/48/000000/instagram-new.png",
-                        "فايبر": "https://img.icons8.com/color/48/000000/viber.png",
-                        "سنابجات": "https://img.icons8.com/color/48/000000/snapchat.png",
-                        "يوتيوب": "https://img.icons8.com/color/48/000000/youtube-play.png"
-                    };
-
-                    appIcons = appList.map(app => {
-                        const clean = app.replace(/[\u200E\u200F]/g, "");
-                        const icon = iconMap[clean] || "";
-                        return icon ? `<span title="${clean}"><img src="${icon}" alt="${clean}">${app}</span>` : `<span>📱 ${app}</span>`;
-                    }).join(" ");
-                } else {
-                    appIcons = "❌ لم يتم العثور على تطبيقات.";
-                }
-
-                output += `
-                    📅 تاريخ الانتهاء: <strong>${expiryDate || "❌ غير موجود"}</strong><br>
-                    🗓️ ${daysRemaining}<br><br>
-                    التطبيقات المجانية:<br><div class="apps">${appIcons}</div>
-                `;
-            }
-
-            resultArea.innerHTML = output;
+        let daysRemaining = '';
+        if (expiryDate) {
+          const today = new Date();
+          const [day, month, year] = expiryDate.split("-").map(x => parseInt(x));
+          const expiry = new Date(year, month - 1, day);
+          const diffTime = expiry - today;
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+          daysRemaining = diffDays >= 0 ? `${diffDays} يوم متبقي` : "❌ منتهي";
         }
 
-        function goToOffers() {
-            alert("🚧 سيتم نقلك إلى قسم العروض قريبًا...");
+        const appMatch = message.match(/(?:الاستخدام|الإستخدام)\s+المجاني\s+لـ(.*?)صالحة\s+لغاية/i);
+        let appIcons = "";
+        if (appMatch) {
+          const appList = appMatch[1].split("،").map(app => app.trim().toLowerCase());
+
+          const iconMap = {
+            "واتساب": "https://img.icons8.com/color/48/000000/whatsapp.png",
+            "تيك توك": "https://img.icons8.com/color/48/000000/tiktok--v1.png",
+            "فيسبوك": "https://img.icons8.com/color/48/000000/facebook-new.png",
+            "إنستغرام": "https://img.icons8.com/color/48/000000/instagram-new.png",
+            "فايبر": "https://img.icons8.com/color/48/000000/viber.png",
+            "سنابجات": "https://img.icons8.com/color/48/000000/snapchat.png",
+            "يوتوب": "https://img.icons8.com/color/48/000000/youtube-play.png"
+          };
+
+          appIcons = appList.map(app => {
+            const clean = app.replace(/[\u200E\u200F]/g, "");
+            const icon = iconMap[clean] || "";
+            return icon ? `<span title="${clean}"><img src="${icon}" alt="${clean}">${app}</span>` : `<span>📱 ${app}</span>`;
+          }).join(" ");
+        } else {
+          appIcons = "❌ لم يتم العثور على تطبيقات.";
         }
 
-        function confirmCall() {
-            if (confirm("هل تريد الاتصال برمز الخدمة *133#؟")) {
-                window.location.href = "tel:*133#";
-            }
-        }
-    </script>
+        output += `
+          📅 تاريخ الانتهاء: <strong>${expiryDate || "❌ غير موجود"}</strong><br>
+          🗓️ ${daysRemaining}<br><br>
+          التطبيقات المجانية:<br><div class="apps">${appIcons}</div>
+        `;
+      }
 
+      resultArea.innerHTML = output;
+    }
+
+    function goToOffers() {
+      alert("🚧 سيتم نقلك إلى قسم العروض قريبًا...");
+    }
+
+    function confirmCall() {
+      if (confirm("هل تريد الاتصال برمز الخدمة *133#؟")) {
+        window.location.href = "tel:*133#";
+      }
+    }
+  </script>
 </body>
 </html>
